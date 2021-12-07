@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'easy_thumbnails',
 
-     'baton.autodiscover', #at the end
+    'baton.autodiscover',  # at the end
 ]
 
 MIDDLEWARE = [
@@ -271,19 +271,25 @@ BATON = {
     # 'MENU_ALWAYS_COLLAPSED': True,
 
     'MENU': (
-        { 'type': 'title', 'label': 'Задания', 'apps': ('api', ) },
-        { 'type': 'model', 'label': 'Квест', 'name': 'mainquest', 'app': 'api' },
-        { 'type': 'model', 'label': 'Задачи', 'name': 'task', 'app': 'api' },
-        { 'type': 'model', 'label': 'Тесты', 'name': 'test', 'app': 'api' },
+        {'type': 'title', 'label': 'Задания', 'apps': ('api', )},
+        {'type': 'model', 'label': 'Квест', 'name': 'mainquest', 'app': 'api'},
+        {'type': 'model', 'label': 'Задачи', 'name': 'task', 'app': 'api'},
+        {'type': 'model', 'label': 'Тесты', 'name': 'test', 'app': 'api'},
 
-        { 'type': 'title', 'label': 'Поощрения', 'apps': ('api', ) },
-        { 'type': 'model', 'label': 'Ачивки', 'name': 'achievement', 'app': 'api' },
-        { 'type': 'model', 'label': 'Товары', 'name': 'product', 'app': 'api' },
+        {'type': 'title', 'label': 'Поощрения', 'apps': ('api', )},
+        {'type': 'model', 'label': 'Ачивки', 'name': 'achievement', 'app': 'api'},
+        {'type': 'model', 'label': 'Товары', 'name': 'product', 'app': 'api'},
 
-        { 'type': 'title', 'label': 'Пользователи', 'apps': ('api', ) },
-        { 'type': 'model', 'label': 'Подразделения', 'name': 'division', 'app': 'api' },
-        { 'type': 'model', 'label': 'Команды', 'name': 'team', 'app': 'api' },
-        { 'type': 'model', 'label': 'Сотрудники', 'name': 'userprofile', 'app': 'api' },
+        {'type': 'title', 'label': 'Пользователи', 'apps': ('api', )},
+        {'type': 'model', 'label': 'Подразделения',
+            'name': 'division', 'app': 'api'},
+        {'type': 'model', 'label': 'Команды', 'name': 'team', 'app': 'api'},
+        {'type': 'model', 'label': 'Сотрудники',
+            'name': 'userprofile', 'app': 'api'},
+        {'type': 'model', 'label': 'Competition',
+            'name': 'competition', 'app': 'api'},
+        {'type': 'model', 'label': 'CompetitionRequest',
+            'name': 'competitionrequest', 'app': 'api'},
     ),
 
     # example of Google Analytics
@@ -292,3 +298,12 @@ BATON = {
     #     'VIEW_ID': '12345678',
     # },
 }
+
+REDIS_HOST = 'std-1578.ist.mospolytech.ru'
+REDIS_PORT = '6379'
+CELERY_BROKER_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = f'redis://{REDIS_HOST}:{REDIS_PORT}/0'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

@@ -12,6 +12,7 @@ logs/*.log
 frontend/package-lock.json
 frontend/yarn.lock
 frontend/dist/**.*
+
 # local env files
 core/.env
 frontend/.env.production
@@ -35,3 +36,7 @@ frontend/.env.example
 *.njsproj
 *.sln
 *.sw?
+
+*.bak
+*.dat
+*.dir

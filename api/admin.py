@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.admin import GroupAdmin, UserAdmin
-from .models import UserProfile, MainQuest, Task, WeeklyTask, Division, JobPosition, Team, \
+from .models import Competition, UserProfile, MainQuest, Task, WeeklyTask, Division, JobPosition, Team, \
     MainQuest, Question, QuestionTheme, Test, TestUser, TestUserAnswer, TestBlock, Achievement, \
-    RequirenmentToGetAchieve, Product, RequirementsToBuyProduct, ProductCategory, Answer
+    RequirenmentToGetAchieve, Product, RequirementsToBuyProduct, ProductCategory, Answer, CompetitionRequest
 from django.db import models
 from django.db.models import Q
 from django import forms
@@ -503,3 +503,5 @@ admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Division, DivisionAdmin)
 admin.site.register(JobPosition, JobPositionAdmin)
 admin.site.register(Team, TeamAdmin)
+admin.site.register(Competition)
+admin.site.register(CompetitionRequest)

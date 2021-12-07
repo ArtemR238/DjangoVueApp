@@ -593,7 +593,7 @@ class Competition(models.Model):
                                    verbose_name='Запрос на участие в соревновании', null=True)
 
     def __str__(self):
-        return str(self.title)
+        return str(self.id)
 
     class Meta:
         verbose_name = "соревнование"
