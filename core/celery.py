@@ -16,13 +16,12 @@ from .service import end_competition
 
 @app.task
 def close_competition():
-    print(1)
-
+    end_competition()
 
 app.conf.beat_schedule = {
     'end-every-hour': {
         'task': 'core.celery.close_competition',
-        'schedule': crontab()
+        'schedule': crontab(),
         # 'schedule': crontab(minute=0, hour=0)
     }
 }
