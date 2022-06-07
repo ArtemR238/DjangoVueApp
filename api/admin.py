@@ -28,6 +28,11 @@ from django.contrib.admin import ModelAdmin, TabularInline
 
 # Register your models here.
 
+
+class RequirenmentToGetAchieveAdmin(admin.ModelAdmin):
+    pass
+
+
 class DivisionAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
     search_fields = ('title',)
@@ -486,6 +491,7 @@ admin.site = MyAdminSite()
 
 admin.site.register(WeeklyTask, WeeklyTaskAdmin)
 admin.site.register(Task, TaskAdmin)
+admin.site.register(RequirenmentToGetAchieve, RequirenmentToGetAchieveAdmin)
 admin.site.register(MainQuest, MainQuestAdmin)
 
 admin.site.register(Test, TestAdmin)

@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     'taggit',
     'django_cleanup',
     'easy_thumbnails',
-
     'baton.autodiscover',  # at the end
 ]
 

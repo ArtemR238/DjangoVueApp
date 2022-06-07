@@ -11,3 +11,5 @@ def end_competition():
         if now.strftime("%Y-%m-%d") == deadline.strftime("%Y-%m-%d"):
             competition.isCompleted = True
             competition.save()
+
+
