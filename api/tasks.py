@@ -1,5 +1,5 @@
 from celery import shared_task
-
+from api.models import RequirenmentToGetAchieve, Achievement, UserProfile, AchievementUserStatus
 
 
 # @shared_task
