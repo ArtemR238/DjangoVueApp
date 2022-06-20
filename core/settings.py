@@ -67,8 +67,8 @@ INSTALLED_APPS = [
     'taggit',
     'django_cleanup',
     'easy_thumbnails',
+    "corsheaders",
     'baton.autodiscover',  # at the end
-
 ]
 
 MIDDLEWARE = [
@@ -76,6 +76,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -89,6 +90,18 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://ygamification.std-1550.ist.mospolytech.ru',
     'http://195.9.87.69:80'
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
 ROOT_URLCONF = 'core.urls'
